@@ -6,6 +6,11 @@
   --dark-taupe: #605b56;
   --font-color: #333;
   --gutter: 1rem;
+  --color-svg: black;
+  --color-svg-hover: #605b56;
+  --color-svg-close: black;
+  --color-svg-close-lighter: black;
+  --color-menu-slide-out: #b1ad95;
 }
 
 * {
@@ -116,12 +121,6 @@ p {
 
 element {
   margin-bottom: 5rem;
-}
-
-nav a {
-  display: inline-block;
-  justify-content: center;
-  align-self: stretch;
 }
 
 .hero {
@@ -288,4 +287,103 @@ nav a {
   .cards {
     flex: 0 1;
   }
+}
+/* New Stuff */
+.menu-icon {
+  position: absolute;
+  left: 0;
+  padding: 1.5rem;
+  height: 100px;
+  width: 100px;
+  z-index: 2;
+}
+
+.menu-icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.menu-icon line {
+  stroke: var(--color-svg);
+  stroke-width: 6px;
+  stroke-linecap: round;
+  transform-origin: center;
+  transition: transform 300ms ease, background-color 300ms;
+}
+
+.menu-icon line:first-child {
+  transform: translateY(16%);
+}
+
+.menu-icon line:last-child {
+  transform: translateY(-16%);
+}
+
+.menu-icon svg:hover line {
+  stroke: var(--color-svg-hover);
+}
+
+.close line {
+  stroke: var(--color-svg-close);
+}
+
+.close line:first-child {
+  transform: rotate(135deg);
+}
+
+.close line:last-child {
+  transform: rotate(-135deg);
+}
+
+.close ul {
+  transform: translateX(0);
+}
+
+nav {
+  justify-content: left;
+  align-items: left;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: calc(60px + 6rem) 2rem 5rem calc(60px + 2rem);
+  /* padding: 10%; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60vw;
+  color: var(--cream-white);
+  background-color: var(--color-menu-slide-out);
+  z-index: 1;
+  transform: translateX(-80vw);
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul a {
+  color: var(--cream-white);
+  width: 10%;
+}
+
+nav ul a[href]:hover {
+  text-decoration: none;
+}
+
+nav li {
+  /* position: relative; */
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  border-bottom: 1px solid #ddd;
+  transition: color 300ms;
+  width: 100%;
+}
+
+nav li:hover {
+  color: var(--color-svg-close-lighter);
+}
+
+nav li:last-child {
+  border-bottom: none;
 }

@@ -31,12 +31,17 @@
 
 <header>
   <nav>
-    <svg>
-      <use href="#hamburger" />
-    </svg>
-    <a>Home</a>
-    <a href="about/">About</a>
-    <a href="contact/">Contact</a>
+    <div class="menu-icon">
+      <svg viewbox="0 0 60 60" width="40px" height="40px">
+        <line x1="5%" y1="50%" x2="95%" y2="50%" />
+        <line x1="5%" y1="50%" x2="95%" y2="50%" />
+      </svg>
+    </div>
+    <ul>
+      <li><a>Home</a></li>
+      <li><a href="about/">About</a></li>
+      <li><a href="contact/">Contact</a></li>
+    </ul>
   </nav>
 </header>
 
@@ -107,15 +112,11 @@
   <footer>
     <p>Copyright David Winn 2022</p>
   </footer>
-
-  <svg>
-    <symbol id="hamburger" viewBox="0 0 100 80" width="40" height="40">
-      <rect width="100" height="20" rx="10"></rect>
-      <rect y="30" width="100" height="20" rx="10"></rect>
-      <rect y="60" width="100" height="20" rx="10"></rect>
-    </symbol>
-  </svg>
-
+  <script>
+    document.querySelector(".menu-icon").addEventListener("click", function () {
+      this.parentElement.classList.toggle("close");
+    });
+  </script>
 </body>
 
 </html>
