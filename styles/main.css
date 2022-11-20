@@ -1,0 +1,291 @@
+:root {
+  --jungle-green: #8db35c;
+  --sage-green: #9ad0b0;
+  --cream-white: #ede7cd;
+  --khaki-light-fawn: #b1ad95;
+  --dark-taupe: #605b56;
+  --font-color: #333;
+  --gutter: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--font-color);
+  font-family: "Hind", sans-serif;
+  line-height: 1.6;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+picture img {
+  max-width: none;
+}
+
+picture {
+  filter: contrast(50%);
+}
+
+svg {
+  width: 200px;
+}
+
+/* temp fix to size about img */
+img[srcset] {
+  width: 50%;
+  height: auto;
+  margin: 2rem auto;
+}
+
+/* temporary fix to size svg images */
+img[src$="svg"] {
+  width: 200px;
+}
+
+h1 {
+  color: var(--cream-white);
+  font-family: "Lora", serif;
+  line-height: 1.1;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  color: var(--sage-green);
+  font-family: "Lora", serif;
+  line-height: 1.1;
+}
+
+h3 {
+  color: var(--khaki-light-fawn);
+  font-family: "Lora", serif;
+  line-height: 1.1;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+}
+
+/* unvisited link */
+a:link {
+  color: var(--jungle-green);
+}
+
+/* visited link */
+a:visited {
+  color: var(--dark-taupe);
+}
+
+/* mouse over link */
+a[href]:hover {
+  color: var(--sage-green);
+}
+
+main {
+  margin: var(--gutter);
+  padding: 0 1rem;
+  max-width: 70rem;
+}
+
+aside,
+footer,
+header {
+  padding: 0 1em;
+}
+
+article {
+  padding: 4rem;
+}
+
+aside {
+  padding: 4rem;
+}
+
+p {
+  margin-bottom: 3rem;
+}
+
+element {
+  margin-bottom: 5rem;
+}
+
+nav a {
+  display: inline-block;
+  justify-content: center;
+  align-self: stretch;
+}
+
+.hero {
+  align-self: stretch;
+  position: relative;
+  text-align: center;
+  margin: var(--gutter);
+}
+
+.hero h1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 4px #000000;
+  font-size: clamp(3rem, 6vw, 6rem);
+}
+
+.hero p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--cream-white);
+  font-size: clamp(0.5rem, 3vw, 3rem);
+}
+
+.button:hover {
+  background-color: var(--khaki-light-fawn);
+  color: white;
+  transition: background-color 700ms ease;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.button {
+  background-color: var(--jungle-green);
+  display: inline-block;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+}
+
+.card p {
+  margin: 0 0 1.5rem;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.6);
+}
+
+.card img {
+  border-radius: 6px 6px 0 0;
+}
+
+.card {
+  /* display: block; */
+  flex: 1;
+  color: #555;
+  border-radius: 6px;
+  box-shadow: 0px 0px 1px #000;
+  transition: box-shadow 300ms ease;
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 100%;
+  padding: var(--gutter);
+  gap: 1rem;
+}
+
+.cards p {
+  padding: 1.5rem 1rem;
+  margin: 0;
+  transition: color 300ms ease;
+}
+
+.cards img {
+  transition: transform 300ms;
+}
+
+.card {
+  overflow: hidden;
+}
+
+.cards img:hover {
+  transform: scale(1.1);
+}
+
+.cards p:hover {
+  color: lime;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  order: -1;
+  flex: 1 1 40%;
+}
+
+/* .left {
+  order: 1;
+} */
+
+.text-content {
+  flex: 1 1 70%;
+}
+
+.panel h2 {
+  margin-top: 0;
+}
+
+@media (min-width: 401px) {
+  .panel {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .panel h2 {
+    margin-top: 0;
+  }
+  .image-wrapper {
+    flex: 1 1 40%;
+    order: 0;
+  }
+  .text-content {
+    flex: 1 1 70%;
+  }
+  .left {
+    order: -1;
+  }
+  /* .panel img {
+    height: 100%;
+    object-fit: cover;
+  } */
+  .cards {
+    display: block;
+  }
+}
+
+@media (min-width: 801px) {
+  /* desktop CSS */
+  .panel {
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .left {
+    order: 0;
+  }
+  .image-wrapper {
+    flex: 1 1 40%;
+    order: 0;
+  }
+  .text-content {
+    flex: 1 1 70%;
+  }
+  .panel h2 {
+    margin-top: 0;
+  }
+  .cards {
+    flex: 0 1;
+  }
+}
