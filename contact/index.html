@@ -27,7 +27,7 @@
   <title>Contact us</title>
 </head>
 
-<body>
+<body class="contact">
   <header>
     <nav>
       <div class="menu-icon">
@@ -44,7 +44,68 @@
     </nav>
   </header>
   <h1>Contact</h1>
-  <img src="../images/form.svg" alt="basic form on a clipboard">
+
+  <main>
+    <div class="image-wrapper">
+      <img src="../images/form.svg" alt="basic form on a clipboard">
+    </div>
+    <form>
+      <label for="name">Full name</label>
+      <input type="text" name="name" id="name">
+
+      <label for="email">Email address</label>
+      <input type="email" name="email" id="email" required>
+
+      <div class="fieldset-wrapper">
+        <fieldset>
+
+          <legend>Which of the following reasons would you like to have access to a 3D printer? (Check all that apply)
+          </legend>
+
+          <input type="checkbox" id="Models" name="3d-reasons" value="Models">
+          <label for="Models">Models</label>
+
+          <input type="checkbox" id="prototyping" name="3d-reasons" value="prototyping">
+          <label for="prototyping">Prototyping</label>
+
+          <input type="checkbox" id="eucalyptus" name="3d-reasons" value="eucalyptus">
+          <label for="eucalyptus">Eucalyptus tincture</label>
+
+          <input type="checkbox" id="emu" name="3d-reasons" value="emu">
+          <label for="emu">Emu oil</label>
+
+          <input type="checkbox" id="kanga" name="3d-reasons" value="kanga-claw">
+          <label for="kanga">Kangaroo claw</label>
+
+          <input type="checkbox" id="platy" name="3d-reasons" value="platypus-liver">
+          <label for="platy">Platypus liver</label>
+        </fieldset>
+      </div>
+
+      <div class="fieldset-wrapper">
+        <fieldset>
+          <legend>How would you describe the taste of Vegemite?</legend>
+
+          <input type="radio" name="taste" id="asphalt" value="asphalt">
+          <label for="asphalt">Powdered asphalt</label>
+
+          <input type="radio" name="taste" id="tar" value="tar">
+          <label for="tar">Lukewarm tar</label>
+
+          <input type="radio" name="taste" id="salt" value="salty">
+          <label for="salt">Salty</label>
+
+          <input type="radio" name="taste" id="delicious" value="delicious">
+          <label for="delicious">Amazeballs</label>
+
+        </fieldset>
+      </div>
+      <label for="haiku">Compose a haiku about Vegemite</label>
+      <textarea name="haiku" id="haiku" rows="10" placeholder="5/7/5 syllable count"></textarea>
+      <button class="button">Submit Now</button>
+    </form>
+  </main>
+
   <script>
     document.querySelector(".menu-icon").addEventListener("click", function () {
       this.parentElement.classList.toggle("close");
